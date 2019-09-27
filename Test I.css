@@ -1,0 +1,51 @@
+body{
+font-family: Comic-Sans-MS, Georgia;
+margin: 0 450px auto;
+}
+img{
+border:15px groove #3232b4;
+border-radius: 999999999px;
+}
+h1{
+color:#7CBC96;
+}
+p{
+border: 5px solid #323232;
+border-radius: 999999999px;
+}
+a{
+text-decoration: none;
+color: #000000;
+}
+a:hover{
+color:#FFFFFF;
+}
+img#MyPic{
+width: 100;
+height: 350;
+border: 15px groove #0CCC00;
+}
+section{
+padding: 50px;
+border: 5px lightCyan groove;
+}
+section.Intro:hover{
+background-color: #FF0000;
+color: #FFFFFF;
+}
+section.about:hover{
+background-color: orange;
+color: #FFFFFF;
+}
+section.FavThings:hover{
+background-color: yellow;
+color: #FFFFFF;
+}
+section.contact:hover{
+background-color: #00FF00;
+color: #FFFFFF;
+}
+section.secretStuff:hover{
+background-color:#3232b4;
+color: #FFFFFF;
+}

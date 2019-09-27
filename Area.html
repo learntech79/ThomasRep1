@@ -1,0 +1,41 @@
+<html>
+<body>
+
+<center>
+
+<h2>Area Calculator</h2>
+
+Length: <input type="number" id="length" value="">
+<br>
+Width: <input type="number" id="width" value="">
+
+<p id="Area_answer">The area will appear here!</p>
+
+<button onclick="calcArea()">Find area
+</button>
+
+<script>
+function calcArea(){
+var a_length=document.getElementById("length").value;
+var a_width=document.getElementById("width").value;
+
+if (document.getElementById("length").value.length > 10){
+	alert("Please enter a number lower than "+a_length+"!");
+	document.getElementById("length").value=0;
+}
+else if(document.getElementById("width").value.length > 10){
+	alert("Please enter a number lower than "+a_width+"!");
+	document.getElementById("width").value=0;
+}
+else{
+	var area= (document.getElementById("length").value)*(document.getElementById("width").value);
+	document.getElementById("Area_answer").innerHTML="The area is "+area+"!";
+}
+
+}
+
+</script>
+
+</center>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<body>
+<center>
+
+<h2>Volume Calculator</h2>
+
+Length: <input type="number" id="length" value="">
+<br>
+Width: <input type="number" id="width" value="">
+<br>
+Height: <input type="number" id="height" value="">
+
+<p id="Volume_answer">The volume will appear here!</p>
+<button onclick="calcVolume()">Find volume
+</button>
+
+<script>
+function calcVolume(){
+var v_length=document.getElementById("length").value;
+var v_width=document.getElementById("width").value;
+var v_height=document.getElementById("height").value;
+
+if (v_length.length > 10){
+	alert("Please enter a number lower than "+v_length+"!");
+	document.getElementById("length").value=0;
+}
+else if(v_width.length > 10){
+	alert("Please enter a number lower than "+v_width+"!");
+	document.getElementById("width").value="0";
+
+}
+else if(v_height.length > 10){
+	alert("Please enter a number lower than "+v_height+"!");
+	document.getElementById("height").value=0;
+}
+else{
+var volume= (document.getElementById("length").value)*(document.getElementById("width").value)*(document.getElementById("height").value);
+document.getElementById("Volume_answer").innerHTML="The volume is "+volume+"!";
+}
+}
+</script>
+
+</center>
+</body>
+</html>

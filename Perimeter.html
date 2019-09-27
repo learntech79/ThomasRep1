@@ -1,0 +1,35 @@
+<html>
+<body>
+<center>
+
+<h2>Perimeter Calculator</h2>
+
+Length: <input type="number" id="length" value="">
+<br>
+Width: <input type="number" id="width" value="">
+
+<p id="Perimeter_answer">The perimeter will appear here!</p>
+<button onclick="calcPerimeter()">Find perimeter
+</button>
+
+<script>
+function calcPerimeter(){
+var p_length=document.getElementById("length").value;
+var p_width=document.getElementById("width").value;
+
+if (document.getElementById("length").value.length > 10){
+	alert("Please enter a number lower than "+p_length+"!");
+	document.getElementById("length").value=0;
+}
+else if(document.getElementById("width").value.length > 10){
+	alert("Please enter a number lower than "+p_width+"!");
+	document.getElementById("width").value=0;
+}
+else{
+	var perimeter= (2*document.getElementById("length").value)+(2*document.getElementById("width").value);
+	document.getElementById("Perimeter_answer").innerHTML="The perimeter is "+perimeter+"!";
+}
+</script>
+
+</center>
+</body>

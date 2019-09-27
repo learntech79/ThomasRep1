@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>
+APV calculator
+</title>
+<style>
+body{
+background-image: url("Anime Landscape.jpg");
+ background-size: 1550px 900px;
+}
+h2{
+outline: groove 0.0000000000000000000000000000000000000000000000000000000000000000001px #3232b4
+}
+</style>
+</head>
+<body>
+
+<center>
+
+<h2>APV* Calculator</h2>
+<h4>*APV stands for Area, Perimeter, and Volume</h4>
+
+<form onchange="APV_control()">
+
+<input type="radio" name="APV" value="Area.html">Area<br>
+<input type="radio" name="APV" value="Perimeter.html">Perimeter<br>
+<input type="radio" name="APV" value="Volume.html">Volume<br><br>
+
+</form>
+
+<iframe src="Blank.html" width="1000" height="400" id="APV_iframe"></iframe>
+
+<script>
+function APV_control(){
+var radios = document.getElementsByName('APV');
+var checkedValue="";
+	for (var i = 0, length = radios.length; i < length; i++)
+	{
+		 if (radios[i].checked)
+		 {
+		  // do whatever you want with the checked radio
+		  checkedValue=radios[i].value;
+		  alert("You have clicked "+checkedValue+"!");
+
+		  break;
+		 }
+	}
+document.getElementById("APV_iframe").src=checkedValue;
+}
+</script>
+
+</center>
+
+</body>
+</html>

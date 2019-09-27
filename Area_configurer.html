@@ -1,0 +1,31 @@
+<html>
+<body>
+
+<center>
+
+<h2>Area Calculator</h2>
+
+Length: <input type="text" id="length" value="">
+<br>
+Width: <input type="text" id="width" value="">
+
+<p id="areaAnswer">The area or perimeter will appear here!</p>
+
+
+<br><br>
+<button onclick="calcPerimeter()">Find perimeter
+</button>
+
+
+
+
+function calcPerimeter(){
+var perimeter= (2*document.getElementById("length").value)+(2*document.getElementById("width").value);
+document.getElementById("areaAnswer").innerHTML="The perimeter is "+perimeter+"!";
+}
+</script>
+
+</center>
+
+</body>
+</html>
