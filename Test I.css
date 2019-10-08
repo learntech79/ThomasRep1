@@ -9,6 +9,9 @@ border-radius: 999999999px;
 h1{
 color:#7CBC96;
 }
+h1:hover{
+color:#000000;
+}
 p{
 border: 5px solid #323232;
 border-radius: 999999999px;
