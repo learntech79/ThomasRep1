@@ -22,16 +22,16 @@ var v_height=document.getElementById("height").value;
 
 if (v_length.length > 10){
 	alert("Please enter a number lower than "+v_length+"!");
-	document.getElementById("length").value=0;
+	document.getElementById("length").value="";
 }
 else if(v_width.length > 10){
 	alert("Please enter a number lower than "+v_width+"!");
-	document.getElementById("width").value="0";
+	document.getElementById("width").value="";
 
 }
 else if(v_height.length > 10){
 	alert("Please enter a number lower than "+v_height+"!");
-	document.getElementById("height").value=0;
+	document.getElementById("height").value="";
 }
 else{
 var volume= (document.getElementById("length").value)*(document.getElementById("width").value)*(document.getElementById("height").value);

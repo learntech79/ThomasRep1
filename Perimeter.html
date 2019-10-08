@@ -19,11 +19,11 @@ var p_width=document.getElementById("width").value;
 
 if (document.getElementById("length").value.length > 10){
 	alert("Please enter a number lower than "+p_length+"!");
-	document.getElementById("length").value=0;
+	document.getElementById("length").value="";
 }
 else if(document.getElementById("width").value.length > 10){
 	alert("Please enter a number lower than "+p_width+"!");
-	document.getElementById("width").value=0;
+	document.getElementById("width").value="";
 }
 else{
 	var perimeter= (2*document.getElementById("length").value)+(2*document.getElementById("width").value);
