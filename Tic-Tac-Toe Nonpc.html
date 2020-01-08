@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>
+Tic Tac Toe
+</title>
+<style>
+
+td{
+border:10px groove #3232b4;
+padding:10px;
+}
+table{
+width:500px;
+height:500px;
+margin-left:700px;
+margin-right:700px;
+margin-top:100px;
+}
+button{
+margin-left:900px;
+margin-right:900px;
+margin-top:25px;
+width:100px;
+height:100px;
+background-color:#3232b4;
+color:#FFFFFF;
+cursor:pointer;
+border:5px solid #7FFFD4;
+}
+button:hover{
+background-color:#00BFFF;
+}
+
+</style>
+<body>
+<table>
+<tr>
+<td id="Cell 1" class="Cells" onclick="Trigger(this)"> </td>
+<td id="Cell 2" class="Cells" onclick="Trigger(this)"> </td>
+<td id="Cell 3" class="Cells" onclick="Trigger(this)"> </td>
+</tr>
+<tr>
+<td id="Cell 4" class="Cells" onclick="Trigger(this)"> </td>
+<td id="Cell 5" class="Cells" onclick="Trigger(this)"> </td>
+<td id="Cell 6" class="Cells" onclick="Trigger(this)"> </td>
+</tr>
+<tr>
+<td id="Cell 7" class="Cells" onclick="Trigger(this)"> </td>
+<td id="Cell 8" class="Cells" onclick="Trigger(this)"> </td>
+<td id="Cell 9" class="Cells" onclick="Trigger(this)"> </td>
+</tr>
+</table>
+<br><br><br>
+<button onclick="Reset()">Reset</button>
+<script>
+var OX = 0;
+function Trigger(mycell){
+  	if(mycell.innerHTML != "X" && mycell.innerHTML != "O"){
+		if (OX == 0){
+			mycell.innerHTML="X";
+			OX = 1;
+		}
+		else{
+			mycell.innerHTML="O";
+			OX = 0;
+		}
+	}
+
+var text = mycell.id;
+alert("You have clicked "+text+"!");
+}
+function Reset(){
+var arrayCells=document.getElementsByClassName("Cells");
+OX=0
+	for(var i=0;i<9;i++){
+		arrayCells[i].innerHTML=" ";
+	}
+
+}
+</script>
+</body>
+</html>
