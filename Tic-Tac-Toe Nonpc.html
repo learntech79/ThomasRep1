@@ -9,12 +9,17 @@ td{
 border:10px groove #3232b4;
 padding:10px;
 }
+input{
+margin-left:900px;
+margin-right:20px;
+}
 table{
 width:500px;
 height:500px;
 margin-left:700px;
 margin-right:700px;
 margin-top:100px;
+table-layout:fixed;
 }
 button{
 margin-left:900px;
@@ -33,28 +38,36 @@ background-color:#00BFFF;
 
 </style>
 <body>
+<form onchange="Chooser()">
+
+<input type="radio" name="P1" value="1">O<br>
+<input type="radio" name="P1" value="0">X<br><br>
+
+</form>
+<br><br><br>
 <table>
 <tr>
-<td id="Cell 1" class="Cells" onclick="Trigger(this)"> </td>
-<td id="Cell 2" class="Cells" onclick="Trigger(this)"> </td>
-<td id="Cell 3" class="Cells" onclick="Trigger(this)"> </td>
+<td id="Cell 1" class="Cells" onclick="Trigger(this)"><br></td>
+<td id="Cell 2" class="Cells" onclick="Trigger(this)"><br></td>
+<td id="Cell 3" class="Cells" onclick="Trigger(this)"><br></td>
 </tr>
 <tr>
-<td id="Cell 4" class="Cells" onclick="Trigger(this)"> </td>
-<td id="Cell 5" class="Cells" onclick="Trigger(this)"> </td>
-<td id="Cell 6" class="Cells" onclick="Trigger(this)"> </td>
+<td id="Cell 4" class="Cells" onclick="Trigger(this)"><br></td>
+<td id="Cell 5" class="Cells" onclick="Trigger(this)"><br></td>
+<td id="Cell 6" class="Cells" onclick="Trigger(this)"><br></td>
 </tr>
 <tr>
-<td id="Cell 7" class="Cells" onclick="Trigger(this)"> </td>
-<td id="Cell 8" class="Cells" onclick="Trigger(this)"> </td>
-<td id="Cell 9" class="Cells" onclick="Trigger(this)"> </td>
+<td id="Cell 7" class="Cells" onclick="Trigger(this)"><br></td>
+<td id="Cell 8" class="Cells" onclick="Trigger(this)"><br></td>
+<td id="Cell 9" class="Cells" onclick="Trigger(this)"><br></td>
 </tr>
 </table>
 <br><br><br>
 <button onclick="Reset()">Reset</button>
 <script>
-var OX = 0;
+var OX = 1;
 function Trigger(mycell){
+ Disable(true);
   	if(mycell.innerHTML != "X" && mycell.innerHTML != "O"){
 		if (OX == 0){
 			mycell.innerHTML="X";
@@ -65,17 +78,45 @@ function Trigger(mycell){
 			OX = 0;
 		}
 	}
-
-var text = mycell.id;
-alert("You have clicked "+text+"!");
 }
 function Reset(){
 var arrayCells=document.getElementsByClassName("Cells");
-OX=0
+OX=0;
 	for(var i=0;i<9;i++){
-		arrayCells[i].innerHTML=" ";
+		arrayCells[i].innerHTML="<br>";
 	}
+Disable(false);
+}
+function Chooser(){
+var radios = document.getElementsByName('P1');
+	for (var i = 0, length = radios.length; i < length; i++)
+	{
+		 if (radios[i].checked)
+		 {
+		  OX=radios[i].value;
+		  Switch();
+		  alert("Player 1: "+newOX+"!");
 
+		  break;
+		 }
+	}
+document.getElementById("APV_iframe").src=checkedValue;
+}
+function Disable(a){
+var radios = document.getElementsByName('P1');
+	for (var i = 0, length = radios.length; i < length; i++)
+	{
+		 radios[i].disabled=a;
+	}
+}
+function changeme(){
+	var newOX=O;
+	if (OX == 1){
+		newOX = O;
+	}
+	else{
+		newOX = X;
+	}
 }
 </script>
 </body>
