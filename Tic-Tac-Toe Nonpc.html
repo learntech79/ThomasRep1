@@ -35,38 +35,54 @@ border:5px solid #7FFFD4;
 button:hover{
 background-color:#00BFFF;
 }
+h1{
+margin-left:840px;
+margin-right:840px;
+}
+h3{
+margin-left:875px;
+}
 
 </style>
 <body>
+<h1>
+Tic-Tac-Toe!
+</h1>
+<h3>
+Made By a Coder
+</h3>
 <form onchange="Chooser()">
 
 <input type="radio" name="P1" value="1">O<br>
 <input type="radio" name="P1" value="0">X<br><br>
 
 </form>
-<br><br><br>
+<br>
 <table>
 <tr>
-<td id="Cell 1" class="Cells" onclick="Trigger(this)"><br></td>
-<td id="Cell 2" class="Cells" onclick="Trigger(this)"><br></td>
-<td id="Cell 3" class="Cells" onclick="Trigger(this)"><br></td>
+<td id="Cell 1" class="Cells" onclick="Trigger(this)" ><br></td>
+<td id="Cell 2" class="Cells" onclick="Trigger(this)" ><br></td>
+<td id="Cell 3" class="Cells" onclick="Trigger(this)" ><br></td>
 </tr>
 <tr>
-<td id="Cell 4" class="Cells" onclick="Trigger(this)"><br></td>
-<td id="Cell 5" class="Cells" onclick="Trigger(this)"><br></td>
-<td id="Cell 6" class="Cells" onclick="Trigger(this)"><br></td>
+<td id="Cell 4" class="Cells" onclick="Trigger(this)" ><br></td>
+<td id="Cell 5" class="Cells" onclick="Trigger(this)" ><br></td>
+<td id="Cell 6" class="Cells" onclick="Trigger(this)" ><br></td>
 </tr>
 <tr>
-<td id="Cell 7" class="Cells" onclick="Trigger(this)"><br></td>
-<td id="Cell 8" class="Cells" onclick="Trigger(this)"><br></td>
-<td id="Cell 9" class="Cells" onclick="Trigger(this)"><br></td>
+<td id="Cell 7" class="Cells" onclick="Trigger(this)" ><br></td>
+<td id="Cell 8" class="Cells" onclick="Trigger(this)" ><br></td>
+<td id="Cell 9" class="Cells" onclick="Trigger(this)" ><br></td>
 </tr>
 </table>
 <br><br><br>
 <button onclick="Reset()">Reset</button>
 <script>
 var OX = 1;
+var foundWinner="false";
+
 function Trigger(mycell){
+if(foundWinner=="false"){
  Disable(true);
   	if(mycell.innerHTML != "X" && mycell.innerHTML != "O"){
 		if (OX == 0){
@@ -78,6 +94,8 @@ function Trigger(mycell){
 			OX = 0;
 		}
 	}
+	}
+	 Win();
 }
 function Reset(){
 var arrayCells=document.getElementsByClassName("Cells");
@@ -86,6 +104,7 @@ OX=0;
 		arrayCells[i].innerHTML="<br>";
 	}
 Disable(false);
+foundWinner="false";
 }
 function Chooser(){
 var radios = document.getElementsByName('P1');
@@ -117,6 +136,88 @@ function changeme(){
 	else{
 		newOX = X;
 	}
+}
+function Win(){
+	var Cell1=document.getElementById("Cell 1").innerHTML;
+	var Cell2=document.getElementById("Cell 2").innerHTML;
+	var Cell3=document.getElementById("Cell 3").innerHTML;
+	var Cell4=document.getElementById("Cell 4").innerHTML;
+	var Cell5=document.getElementById("Cell 5").innerHTML;
+	var Cell6=document.getElementById("Cell 6").innerHTML;
+	var Cell7=document.getElementById("Cell 7").innerHTML;
+	var Cell8=document.getElementById("Cell 8").innerHTML;
+	var Cell9=document.getElementById("Cell 9").innerHTML;
+	if (Cell1 == "X" && Cell2 == "X" && Cell3 == "X"){
+		alert("X won!");
+		foundWinner="true";
+	}
+	else if (Cell4 == "X" && Cell5 == "X" && Cell6 == "X"){
+		alert("X won!");
+		foundWinner="true";
+	}
+	else if (Cell7 == "X" && Cell8 == "X" && Cell9 == "X"){
+		alert("X won!");
+		foundWinner="true";
+	}
+	else if (Cell1 == "X" && Cell4 == "X" && Cell7 == "X"){
+		alert("X won!");
+		foundWinner="true";
+	}
+	else if (Cell2 == "X" && Cell5 == "X" && Cell8 == "X"){
+		alert("X won!");
+		foundWinner="true";
+	}
+	else if (Cell3 == "X" && Cell6 == "X" && Cell9 == "X"){
+
+	alert("X won!");
+	foundWinner="true";
+	}
+	else if (Cell1 == "X" && Cell5 == "X" && Cell9 == "X"){
+		alert("X won!");
+		foundWinner="true";
+	}
+	else if (Cell7 == "X" && Cell5 == "X" && Cell3 == "X"){
+		alert("X won!");
+		foundWinner="true";
+	}
+	else{
+	}
+
+	if (Cell1 == "O" && Cell2 == "O" && Cell3 == "O"){
+		alert("O won!");
+		foundWinner="true";
+	}
+    else if (Cell4 == "O" && Cell5 == "O" && Cell6 == "O"){
+    	alert("O won!");
+    	foundWinner="true";
+    }
+    else if (Cell7 == "O" && Cell8 == "O" && Cell9 == "O"){
+    	alert("O won!");
+    	foundWinner="true";
+    }
+    else if (Cell1 == "O" && Cell4 == "O" && Cell7 == "O"){
+    	alert("O won!");
+    	foundWinner="true";
+    }
+    else if (Cell2 == "O" && Cell5 == "O" && Cell8 == "O"){
+    	alert("O won!");
+    	foundWinner="true";
+    }
+    else if (Cell3 == "O" && Cell6 == "O" && Cell9 == "O"){
+    	alert("O won!");
+    	foundWinner="true";
+    }
+    else if (Cell1 == "O" && Cell5 == "O" && Cell9 == "O"){
+    	alert("O won!");
+    	foundWinner="true";
+    }
+    else if (Cell7 == "O" && Cell5 == "O" && Cell3 == "O"){
+    	alert("O won!");
+    	foundWinner="true";
+    }
+    else{
+	}
+
 }
 </script>
 </body>
