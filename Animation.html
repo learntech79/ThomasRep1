@@ -12,27 +12,35 @@
   position: absolute;
   background-color: red;
 }
+#glitch {
+width: 10px;
+height: 10px;
+position: absolute;
+background-color: black;
+}
 </style>
 <body>
 
- 
+
 
 <div id ="container"onmouseover="myMove()">
   <div id ="animate"onmouseover="myMove()"></div>
+  <div id ="glitch"></div>
 </div>
+
 
 <script>
 function myMove() {
-  var elem = document.getElementById("animate");   
+  var elem = document.getElementById("animate");
   var pos = 0;
   var id = setInterval(frame, );
   function frame() {
     if (pos == 350) {
       clearInterval(id);
     } else {
-      pos++; 
-      elem.style.top = pos + "px"; 
-      elem.style.left = pos + "px"; 
+      pos++;
+      elem.style.top = pos + "px";
+      elem.style.left = pos + "px";
     }
   }
 }
