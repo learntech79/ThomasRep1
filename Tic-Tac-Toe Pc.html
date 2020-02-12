@@ -211,7 +211,96 @@ function Win(){
     	alert("O won!");
     	foundWinner="true";
     }
-    else{
+}
+functon CPUDefCheck(){
+	var Cell1=document.getElementById("Cell 1").innerHTML;
+	var Cell2=document.getElementById("Cell 2").innerHTML;
+	var Cell3=document.getElementById("Cell 3").innerHTML;
+	var Cell4=document.getElementById("Cell 4").innerHTML;
+	var Cell5=document.getElementById("Cell 5").innerHTML;
+	var Cell6=document.getElementById("Cell 6").innerHTML;
+	var Cell7=document.getElementById("Cell 7").innerHTML;
+	var Cell8=document.getElementById("Cell 8").innerHTML;
+	var Cell9=document.getElementById("Cell 9").innerHTML;
+	if (Cell1 == "O" && Cell2 == "O"){
+		if(Cell3!="O" && Cell3!="X"){
+			document.getElementById("Cell 3").innerHTML="X";
+		}
+	}
+	elseif (Cell2 == "O" && Cell3 == "O"){
+		if(Cell1!="O" && Cell1!="X"){
+				document.getElementById("Cell 1").innerHTML="X";
+		}
+	}
+	else if (Cell4 == "O" && Cell5 == "O"){
+		if(Cell6!="O" && Cell6!="X"){
+				document.getElementById("Cell 6").innerHTML="X";
+		}
+	}
+	else if (Cell5 == "O" && Cell6 == "O"){
+		if(Cell4!="O" && Cell4!="X"){
+				document.getElementById("Cell 4").innerHTML="X";
+		}
+	}
+	else if (Cell7 == "O" && Cell8 == "O"){
+		if(Cell9!="O" && Cell9!="X"){
+				document.getElementById("Cell 9").innerHTML="X";
+		}
+	}
+	else if (Cell8 == "O" && Cell9 == "O"){
+		if(Cell7!="O" && Cell7!="X"){
+				document.getElementById("Cell 7").innerHTML="X";
+		}
+	}
+	else if (Cell1 == "O" && Cell4 == "O"){
+	}
+		if(Cell7!="O" && Cell7!="X"){
+				document.getElementById("Cell 7").innerHTML="X";
+		}
+	else if (Cell2 == "O" && Cell5 == "O"){
+		if(Cell8!="O" && Cell8!="X"){
+				document.getElementById("Cell 8").innerHTML="X";
+		}
+	}
+	else if (Cell3 == "O" && Cell6 == "O"){
+		if(Cell9!="O" && Cell9!="X"){
+				document.getElementById("Cell 9").innerHTML="X";
+		}
+	}
+	else if (Cell4 == "O" && Cell7 == "O"){
+		if(Cell1!="O" && Cell1!="X"){
+				document.getElementById("Cell 1").innerHTML="X";
+		}
+	}
+	else if (Cell5 == "O" && Cell8 == "O"){
+		if(Cell2!="O" && Cell2!="X"){
+				document.getElementById("Cell 2").innerHTML="X";
+		}
+	}
+	else if (Cell6 == "O" && Cell9 == "O"){
+		if(Cell3!="O" && Cell3!="X"){
+				document.getElementById("Cell 3").innerHTML="X";
+		}
+	}
+	else if (Cell1 == "O" && Cell5 == "O"){
+		if(Cell9!="O" && Cell9!="X"){
+				document.getElementById("Cell 9").innerHTML="X";
+		}
+	}
+	else if (Cell5 == "O" && Cell9 == "O"){
+		if(Cell1!="O" && Cell1!="X"){
+				document.getElementById("Cell 1").innerHTML="X";
+		}
+	}
+	else if (Cell3 == "O" && Cell5 == "O"){
+		if(Cell7!="O" && Cell7!="X"){
+				document.getElementById("Cell 7").innerHTML="X";
+		}
+	}
+	else if (Cell5 == "O" && Cell7 == "O"){
+		if(Cell3!="O" && Cell3!="X"){
+				document.getElementById("Cell 3").innerHTML="X";
+		}
 	}
 
 }
