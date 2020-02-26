@@ -7,7 +7,7 @@ Tic Tac Toe
 
 td{
 border:10px groove #3232b4;
-padding:10px;
+padding:10px;cursor:pointer;
 }
 table{
 width:500px;
@@ -82,15 +82,16 @@ if(foundWinner=="false"){
  Disable(true);
   	if(mycell.innerHTML != "X" && mycell.innerHTML != "O"){
 		if (OX == 0){
-			mycell.innerHTML="X";
-			OX = 1;
-		}
-		else{
-			mycell.innerHTML="O";
-			OX = 0;
+				mycell.innerHTML="X";
+				OX = 1;
+			}
+			else{
+				mycell.innerHTML="O";
+				OX = 0;
+			}
 		}
 	}
-	}
+	 CPURandom();
 	 Win();
 }
 function Reset(){
@@ -212,6 +213,7 @@ function Win(){
     	foundWinner="true";
     }
 }
+/*
 functon CPUDefCheck(){
 	var Cell1=document.getElementById("Cell 1").innerHTML;
 	var Cell2=document.getElementById("Cell 2").innerHTML;
@@ -303,6 +305,24 @@ functon CPUDefCheck(){
 		}
 	}
 
+}*/
+function CPURandom(){
+   for(;;){
+		var RandomNum = Math.floor(Math.random()*9)+1;
+		var RandomCell = 'Cell '+RandomNum;
+		alert("Random Cell = "+RandomCell);
+		if (document.getElementById(RandomCell).innerHTML != "X" && document.getElementById(RandomCell).innerhtml != "O"){
+			if (OX == 0){
+				document.getElementById(RandomCell).innerHTML="X";
+				OX = 1;
+			}
+			else{
+				document.getElementById(RandomCell).innerHTML="O";
+				OX = 0;
+			}
+		 break;
+		}
+	}
 }
 </script>
 </body>
